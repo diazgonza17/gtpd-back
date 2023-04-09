@@ -1,5 +1,5 @@
 
-package com.yoprogramo.portfolio.model;
+package com.yoprogramo.portfolioBack.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

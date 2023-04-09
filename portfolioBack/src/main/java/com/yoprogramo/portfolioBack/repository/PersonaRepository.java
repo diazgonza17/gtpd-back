@@ -1,7 +1,7 @@
 
-package com.yoprogramo.portfolio.repository;
+package com.yoprogramo.portfolioBack.repository;
 
-import com.yoprogramo.portfolio.model.Persona;
+import com.yoprogramo.portfolioBack.model.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

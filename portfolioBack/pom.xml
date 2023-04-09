@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.yoprogramo</groupId>
-	<artifactId>portfolio</artifactId>
+	<artifactId>portfolioBack</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>portfolio</name>
+	<name>portfolioBack</name>
 	<description>Portfolio BackEnd for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>

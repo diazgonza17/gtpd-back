@@ -1,8 +1,8 @@
 
-package com.yoprogramo.portfolio.controller;
+package com.yoprogramo.portfolioBack.controller;
 
-import com.yoprogramo.portfolio.model.Persona;
-import com.yoprogramo.portfolio.service.IPersonaService;
+import com.yoprogramo.portfolioBack.model.Persona;
+import com.yoprogramo.portfolioBack.service.IPersonaService;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
