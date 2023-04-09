@@ -1,8 +1,8 @@
 
-package com.portfolio.gonzalo.Controller;
+package com.yoprogramo.portfolio.controller;
 
-import com.portfolio.gonzalo.Model.Persona;
-import com.portfolio.gonzalo.Service.IPersonaService;
+import com.yoprogramo.portfolio.model.Persona;
+import com.yoprogramo.portfolio.service.IPersonaService;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

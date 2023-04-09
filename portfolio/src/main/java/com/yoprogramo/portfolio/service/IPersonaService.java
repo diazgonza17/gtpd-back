@@ -1,7 +1,7 @@
 
-package com.portfolio.gonzalo.Service;
+package com.yoprogramo.portfolio.service;
 
-import com.portfolio.gonzalo.Model.Persona;
+import com.yoprogramo.portfolio.model.Persona;
 import java.util.List;
 
 public interface IPersonaService {

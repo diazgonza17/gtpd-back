@@ -1,8 +1,8 @@
 
-package com.portfolio.gonzalo.Service;
+package com.yoprogramo.portfolio.service;
 
-import com.portfolio.gonzalo.Model.Persona;
-import com.portfolio.gonzalo.Repository.PersonaRepository;
+import com.yoprogramo.portfolio.model.Persona;
+import com.yoprogramo.portfolio.repository.PersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

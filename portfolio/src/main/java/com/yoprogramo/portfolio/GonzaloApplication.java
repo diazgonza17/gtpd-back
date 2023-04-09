@@ -1,4 +1,4 @@
-package com.portfolio.gonzalo;
+package com.yoprogramo.portfolio;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,7 @@
 
-package com.portfolio.gonzalo.Repository;
+package com.yoprogramo.portfolio.repository;
 
-import com.portfolio.gonzalo.Model.Persona;
+import com.yoprogramo.portfolio.model.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

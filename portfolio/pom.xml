@@ -8,11 +8,11 @@
 		<version>3.0.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.portfolio</groupId>
-	<artifactId>gonzalo</artifactId>
+	<groupId>com.yoprogramo</groupId>
+	<artifactId>portfolio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gonzalo</name>
-	<description>Portfolio project for Spring Boot</description>
+	<name>portfolio</name>
+	<description>Portfolio BackEnd for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
