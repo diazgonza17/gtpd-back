@@ -3,9 +3,9 @@ package com.yoprogramo.portfolioBack.controller;
 
 import com.yoprogramo.portfolioBack.model.Persona;
 import com.yoprogramo.portfolioBack.service.IPersonaService;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,11 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin (origins="http://localhost:4200")
-public class Controller {
+public class PersonaController {
     
     @Autowired
     private IPersonaService persoServ;
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/persona/new")
     public void agregarPersona(@RequestBody Persona pers) {
         persoServ.crearPersona(pers);
@@ -35,11 +36,13 @@ public class Controller {
         return persoServ.verPersonas();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/persona/delete/{id}")
     public void borrarPersona (@PathVariable Long id){
         persoServ.borrarPersona(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/persona/edit/{id}")
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,
