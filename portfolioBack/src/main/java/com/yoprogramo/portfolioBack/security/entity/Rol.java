@@ -18,7 +18,7 @@ public class Rol {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idRol;
+    private Long id;
     
     @NotNull
     @Enumerated(EnumType.STRING)

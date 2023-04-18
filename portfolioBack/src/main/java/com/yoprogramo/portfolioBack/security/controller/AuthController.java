@@ -8,8 +8,8 @@ import com.yoprogramo.portfolioBack.security.entity.Rol;
 import com.yoprogramo.portfolioBack.security.entity.Usuario;
 import com.yoprogramo.portfolioBack.security.enums.RolNombre;
 import com.yoprogramo.portfolioBack.security.jwt.JwtProvider;
-import com.yoprogramo.portfolioBack.security.service.RolService;
-import com.yoprogramo.portfolioBack.security.service.UsuarioService;
+import com.yoprogramo.portfolioBack.security.service.SRol;
+import com.yoprogramo.portfolioBack.security.service.SUsuario;
 import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
@@ -38,9 +38,9 @@ public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
     @Autowired
-    UsuarioService usuarioService;
+    SUsuario usuarioService;
     @Autowired
-    RolService rolService;
+    SRol rolService;
     @Autowired
     JwtProvider jwtProvider;
    

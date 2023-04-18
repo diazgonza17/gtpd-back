@@ -16,7 +16,7 @@ public class Persona {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPersona;
+    private Long id;
 
     @NotNull
     @Size(min = 1, max = 50, message = "Length not allowed")
@@ -31,7 +31,7 @@ public class Persona {
     }
 
     public Persona(Long id, String nombre, String apellido) {
-        this.idPersona = id;
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
     }

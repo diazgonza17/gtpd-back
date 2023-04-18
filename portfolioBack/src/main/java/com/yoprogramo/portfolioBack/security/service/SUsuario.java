@@ -2,17 +2,17 @@
 package com.yoprogramo.portfolioBack.security.service;
 
 import com.yoprogramo.portfolioBack.security.entity.Usuario;
-import com.yoprogramo.portfolioBack.security.repository.IUsuarioRepository;
 import javax.transaction.Transactional;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.yoprogramo.portfolioBack.security.repository.IRUsuario;
 
 @Service
 @Transactional
-public class UsuarioService {
+public class SUsuario {
     @Autowired
-    IUsuarioRepository iusuarioRepository;
+    IRUsuario iusuarioRepository;
     
     public Optional<Usuario> getByNombreUsuario(String nombreUsuario) {
         return iusuarioRepository.findByNombreUsuario(nombreUsuario);

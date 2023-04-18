@@ -2,7 +2,6 @@
 package com.yoprogramo.portfolioBack.controller;
 
 import com.yoprogramo.portfolioBack.model.Persona;
-import com.yoprogramo.portfolioBack.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,13 +15,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.yoprogramo.portfolioBack.service.ISPersona;
 
 @RestController
 @CrossOrigin (origins="http://localhost:4200")
-public class PersonaController {
+public class CPersona {
     
     @Autowired
-    private IPersonaService persoServ;
+    private ISPersona persoServ;
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/persona/new")
