@@ -15,50 +15,47 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.yoprogramo.portfolioBack.service.ISPersona;
+import com.yoprogramo.portfolioBack.service.SPersona;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
+@RequestMapping("perso")
 @CrossOrigin (origins="http://localhost:4200")
 public class CPersona {
     
     @Autowired
-    private ISPersona persoServ;
+    private SPersona persoServ;
     
-    @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping ("/persona/new")
-    public void agregarPersona(@RequestBody Persona pers) {
-        persoServ.crearPersona(pers);
-    }
-    
-    @GetMapping ("/persona/all")
+    @GetMapping ("/all")
     @ResponseBody
-    public List<Persona> verPersonas() {
-        return persoServ.verPersonas();
+    public List<Persona> all() {
+        return persoServ.getAll();
+    }
+    
+    @GetMapping("/detail/{id}")
+    public Persona detail(@PathVariable int id) {
+        return persoServ.getById(id);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping ("/persona/delete/{id}")
-    public void borrarPersona (@PathVariable Long id){
-        persoServ.borrarPersona(id);
+    @PostMapping ("/create")
+    public void create(@RequestBody Persona pers) {
+        persoServ.save(pers);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/persona/edit/{id}")
-    public Persona editPersona(@PathVariable Long id,
-                               @RequestParam("nombre") String nuevoNombre,
-                               @RequestParam("apellido") String nuevoApellido) {
-        Persona perso = persoServ.buscarPersona(id);
-        
+    @PutMapping("/update/{id}")
+    public Persona update(@PathVariable int id, @RequestParam("nombre") String nuevoNombre, @RequestParam("apellido") String nuevoApellido) {
+        Persona perso = persoServ.getById(id);
         perso.setNombre(nuevoNombre);
         perso.setApellido(nuevoApellido);
-    
-        persoServ.crearPersona(perso);
+        persoServ.save(perso);
         return perso;
     }
     
-    @GetMapping("persona/perfil")
-    public Persona buscarPersona() {
-        return persoServ.buscarPersona(1L);
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping ("/delete/{id}")
+    public void delete (@PathVariable int id){
+        persoServ.deleteById(id);
     }
-
 }

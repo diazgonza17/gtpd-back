@@ -36,7 +36,6 @@ public class Usuario {
     @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
     
-    //Constructor
     public Usuario() {
     }
 
@@ -46,5 +45,4 @@ public class Usuario {
         this.email = email;
         this.password = password;
     }
-    
 }

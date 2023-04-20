@@ -8,29 +8,24 @@ import org.springframework.stereotype.Service;
 import com.yoprogramo.portfolioBack.repository.IRPersona;
 
 @Service
-public class SPersona implements ISPersona {
+public class SPersona {
 
     @Autowired
     IRPersona rPersona;
     
-    @Override
-    public List<Persona> verPersonas() {
+    public List<Persona> getAll() {
         return rPersona.findAll();
     }
+    
+    public Persona getById(int id) {
+        return rPersona.findById(id).orElse(null);
+    }
 
-    @Override
-    public void crearPersona(Persona per) {
+    public void save(Persona per) {
         rPersona.save(per);
     }
 
-    @Override
-    public void borrarPersona(Long id) {
+    public void deleteById(int id) {
         rPersona.deleteById(id);
     }
-
-    @Override
-    public Persona buscarPersona(Long id) {
-        return rPersona.findById(id).orElse(null);
-    }
-    
 }

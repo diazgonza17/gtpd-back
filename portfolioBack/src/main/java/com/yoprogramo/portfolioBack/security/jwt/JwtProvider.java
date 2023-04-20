@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtProvider {
+    
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
     @Value("${jwt.secret}")

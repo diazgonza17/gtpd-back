@@ -22,6 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity
 public class MainSecurity {
+    
     @Autowired
     UserDetailsServiceImpl userDetailsServiceImpl;
     @Autowired
@@ -51,10 +52,7 @@ public class MainSecurity {
                 .authorizeHttpRequests()
                 .antMatchers("/**").permitAll()
                 .anyRequest().authenticated();
-
         http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
-    
 }

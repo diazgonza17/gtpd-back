@@ -11,22 +11,23 @@ import com.yoprogramo.portfolioBack.security.repository.IRUsuario;
 @Service
 @Transactional
 public class SUsuario {
+    
     @Autowired
-    IRUsuario iusuarioRepository;
+    IRUsuario rUsuarioRepository;
     
     public Optional<Usuario> getByNombreUsuario(String nombreUsuario) {
-        return iusuarioRepository.findByNombreUsuario(nombreUsuario);
+        return rUsuarioRepository.findByNombreUsuario(nombreUsuario);
     }
     
     public boolean existsByNombreUsuario(String nombreUsuario){
-        return iusuarioRepository.existsByNombreUsuario(nombreUsuario);
+        return rUsuarioRepository.existsByNombreUsuario(nombreUsuario);
     }
     
     public boolean existsByEmail(String email){
-        return iusuarioRepository.existsByEmail(email);
+        return rUsuarioRepository.existsByEmail(email);
     }
     
     public void save(Usuario usuario){
-        iusuarioRepository.save(usuario);
+        rUsuarioRepository.save(usuario);
     }
 }

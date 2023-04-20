@@ -9,12 +9,10 @@ public class Mensaje {
 
     private String mensaje;
     
-    //Constructores
     public Mensaje() {
     }
     
     public Mensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
 }

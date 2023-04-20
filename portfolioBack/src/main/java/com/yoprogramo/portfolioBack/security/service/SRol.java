@@ -12,14 +12,15 @@ import com.yoprogramo.portfolioBack.security.repository.IRRol;
 @Service
 @Transactional
 public class SRol {
+    
     @Autowired
-    IRRol irolRepository;
+    IRRol rRol;
     
     public Optional<Rol> getByRolNombre(RolNombre rolNombre){
-        return irolRepository.findByRolNombre(rolNombre);
-    };
+        return rRol.findByRolNombre(rolNombre);
+    }
     
     public void save(Rol rol) {
-        irolRepository.save(rol);
+        rRol.save(rol);
     }
 }

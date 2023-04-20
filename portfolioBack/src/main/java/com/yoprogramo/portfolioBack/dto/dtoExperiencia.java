@@ -7,18 +7,17 @@ import lombok.Setter;
 
 @Getter @Setter
 public class dtoExperiencia {
-    @NotBlank
-    private String nombreE;
-    @NotBlank
-    private String descripcionE;
     
-    //Constructores
+    @NotBlank
+    private String nombreExp;
+    @NotBlank
+    private String descripcionExp;
+    
     public dtoExperiencia() {
     }
 
-    public dtoExperiencia(String nombreE, String descripcionE) {
-        this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
+    public dtoExperiencia(String nombreExp, String descripcionExp) {
+        this.nombreExp = nombreExp;
+        this.descripcionExp = descripcionExp;
     }
-    
 }

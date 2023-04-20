@@ -16,23 +16,23 @@ public class SExperiencia {
     @Autowired
     IRExperiencia rExperiencia;
     
-    public List<Experiencia> list() {
+    public List<Experiencia> getAll() {
         return rExperiencia.findAll();
     }
     
-    public Optional<Experiencia> getOne(int id){
+    public Optional<Experiencia> getById(int id){
         return rExperiencia.findById(id);
     }
     
-    public Optional<Experiencia> getByNombreE(String nombreE){
-        return rExperiencia.findByNombreE(nombreE);
+    public Optional<Experiencia> getByNombreExp(String nombreExp){
+        return rExperiencia.findByNombreExp(nombreExp);
     }
     
     public void save(Experiencia exp){
         rExperiencia.save(exp);
     }
     
-    public void delete(int id){
+    public void deleteById(int id){
         rExperiencia.deleteById(id);
     }
     
@@ -40,8 +40,7 @@ public class SExperiencia {
         return rExperiencia.existsById(id);
     }
     
-    public boolean existsByNombreE(String nombreE){
-        return rExperiencia.existsByNombreE(nombreE);
-    }
-    
+    public boolean existsByNombreExp(String nombreExp){
+        return rExperiencia.existsByNombreExp(nombreExp);
+    }  
 }

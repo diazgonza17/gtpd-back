@@ -33,12 +33,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth")
 @CrossOrigin(origins={"http://localhost:4200"})
 public class AuthController {
+    
     @Autowired
     PasswordEncoder passwordEncoder;
     @Autowired
     AuthenticationManager authenticationManager;
     @Autowired
-    SUsuario usuarioService;
+    SUsuario sUsuario;
     @Autowired
     SRol rolService;
     @Autowired
@@ -49,10 +50,10 @@ public class AuthController {
         if(bindingResult.hasErrors()){
             return new ResponseEntity(new Mensaje("Campos mal puestos o email invalido"), HttpStatus.BAD_REQUEST);
         }
-        if(usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario())){
+        if(sUsuario.existsByNombreUsuario(nuevoUsuario.getNombreUsuario())){
             return new ResponseEntity(new Mensaje("Ese nombre de usuario ya existe"), HttpStatus.BAD_REQUEST);
         }
-        if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
+        if(sUsuario.existsByEmail(nuevoUsuario.getEmail())){
             return new ResponseEntity(new Mensaje("Ese email ya existe"), HttpStatus.BAD_REQUEST);
         }
         
@@ -66,7 +67,7 @@ public class AuthController {
         }
         
         usuario.setRoles(roles);
-        usuarioService.save(usuario);
+        sUsuario.save(usuario);
         
         return new ResponseEntity(new Mensaje("Usuario guardado"), HttpStatus.CREATED);
     }
