@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.yoprogramo.portfolioBack.repository.IRPersona;
+import java.util.Optional;
 
 @Service
 public class SPersona {
@@ -17,8 +18,12 @@ public class SPersona {
         return rPersona.findAll();
     }
     
-    public Persona getById(int id) {
-        return rPersona.findById(id).orElse(null);
+    public Optional<Persona> getById(int id) {
+        return rPersona.findById(id);
+    }
+    
+    public Optional<Persona> getByNombre(String nombre){
+        return rPersona.findByNombre(nombre);
     }
 
     public void save(Persona per) {
@@ -27,5 +32,13 @@ public class SPersona {
 
     public void deleteById(int id) {
         rPersona.deleteById(id);
+    }
+    
+    public boolean existsById(int id){
+        return rPersona.existsById(id);
+    }
+    
+    public boolean existsByNombre(String nombre){
+        return rPersona.existsByNombre(nombre);
     }
 }

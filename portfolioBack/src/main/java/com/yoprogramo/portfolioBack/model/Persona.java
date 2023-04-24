@@ -27,8 +27,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido) {
-        this.id = id;
+    public Persona(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }
