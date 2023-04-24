@@ -30,7 +30,6 @@ public class CExperiencia {
 
     @GetMapping("/all")
     public ResponseEntity<List<Experiencia>> all() {
-        //List<Experiencia> getAll = sExperiencia.getAll();
         return new ResponseEntity(sExperiencia.getAll(), HttpStatus.OK);
     }
     
@@ -53,7 +52,7 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("La experiencia ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-        Experiencia experiencia = new Experiencia(dtoExp.getNombreExp(), dtoExp.getDescripcionExp());
+        Experiencia experiencia = new Experiencia(dtoExp.getNombreExp(), dtoExp.getDescripcionExp(), dtoExp.getInicioExp(), dtoExp.getFinExp());
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
     }
@@ -73,6 +72,8 @@ public class CExperiencia {
         Experiencia experiencia = sExperiencia.getById(id).get();
         experiencia.setNombreExp(dtoExp.getNombreExp());
         experiencia.setDescripcionExp(dtoExp.getDescripcionExp());
+        experiencia.setInicioExp(dtoExp.getInicioExp());
+        experiencia.setFinExp(dtoExp.getFinExp());
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);
     }

@@ -17,12 +17,16 @@ public class Experiencia {
     private int id;
     private String nombreExp;
     private String descripcionExp;
+    private int inicioExp;
+    private int finExp;
     
     public Experiencia() {
     }
 
-    public Experiencia(String nombreExp, String descripcionExp) {
+    public Experiencia(String nombreExp, String descripcionExp, int inicioExp, int finExp) {
         this.nombreExp = nombreExp;
         this.descripcionExp = descripcionExp;
+        this.inicioExp = inicioExp;
+        this.finExp = finExp;
     }
 }
