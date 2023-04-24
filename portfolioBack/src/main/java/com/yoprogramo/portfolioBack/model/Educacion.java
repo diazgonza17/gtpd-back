@@ -17,12 +17,16 @@ public class Educacion {
     private int id;
     private String nombreEdu;
     private String descripcionEdu;
+    private int inicioEdu;
+    private int finEdu;
 
     public Educacion() {
     }
 
-    public Educacion(String nombreEdu, String descripcionEdu) {
+    public Educacion(String nombreEdu, String descripcionEdu, int inicioEdu, int finEdu) {
         this.nombreEdu = nombreEdu;
         this.descripcionEdu = descripcionEdu;
+        this.inicioEdu = inicioEdu;
+        this.finEdu = finEdu;
     }
 }
