@@ -23,12 +23,16 @@ public class Persona {
     @NotNull
     @Size(min = 1, max = 50, message = "Length not allowed")
     private String apellido;
+    private String titulo;
+    private String ubicacion;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido) {
+    public Persona(String nombre, String apellido, String titulo, String ubicacion) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.titulo = titulo;
+        this.ubicacion = ubicacion;
     }
 }

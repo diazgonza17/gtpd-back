@@ -56,7 +56,7 @@ public class CPersona {
             return new ResponseEntity(new Mensaje("La persona ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-        Persona persona = new Persona(dtoPerso.getNombre(), dtoPerso.getApellido());
+        Persona persona = new Persona(dtoPerso.getNombre(), dtoPerso.getApellido(), dtoPerso.getTitulo(), dtoPerso.getUbicacion());
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona agregada"), HttpStatus.OK);
     }
@@ -76,6 +76,8 @@ public class CPersona {
         Persona persona = sPersona.getById(id).get();
         persona.setNombre(dtoPerso.getNombre());
         persona.setApellido(dtoPerso.getApellido());
+        persona.setTitulo(dtoPerso.getTitulo());
+        persona.setUbicacion(dtoPerso.getUbicacion());
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
     }
