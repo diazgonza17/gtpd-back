@@ -6,7 +6,6 @@ import com.yoprogramo.portfolioBack.model.Persona;
 import com.yoprogramo.portfolioBack.security.controller.Mensaje;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.yoprogramo.portfolioBack.service.SPersona;
@@ -56,7 +54,7 @@ public class CPersona {
             return new ResponseEntity(new Mensaje("La persona ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-        Persona persona = new Persona(dtoPerso.getNombre(), dtoPerso.getApellido(), dtoPerso.getTitulo(), dtoPerso.getUbicacion());
+        Persona persona = new Persona(dtoPerso.getNombre(), dtoPerso.getApellido(), dtoPerso.getTitulo(), dtoPerso.getUbicacion(), dtoPerso.getAbout());
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona agregada"), HttpStatus.OK);
     }
@@ -78,6 +76,7 @@ public class CPersona {
         persona.setApellido(dtoPerso.getApellido());
         persona.setTitulo(dtoPerso.getTitulo());
         persona.setUbicacion(dtoPerso.getUbicacion());
+        persona.setAbout(dtoPerso.getAbout());
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
     }

@@ -16,14 +16,17 @@ public class dtoPersona {
     private String titulo;    
     @NotBlank
     private String ubicacion;
+    @NotBlank
+    private String about;
 
     public dtoPersona() {
     }
 
-    public dtoPersona(String nombre, String apellido, String titulo, String ubicacion) {
+    public dtoPersona(String nombre, String apellido, String titulo, String ubicacion, String about) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.ubicacion = ubicacion;
+        this.about = about;
     }
 }

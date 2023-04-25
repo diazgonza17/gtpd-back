@@ -1,6 +1,7 @@
 
 package com.yoprogramo.portfolioBack.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,14 +26,17 @@ public class Persona {
     private String apellido;
     private String titulo;
     private String ubicacion;
+    @Column(length = 1000)
+    private String about;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String titulo, String ubicacion) {
+    public Persona(String nombre, String apellido, String titulo, String ubicacion, String about) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.ubicacion = ubicacion;
+        this.about = about;
     }
 }
