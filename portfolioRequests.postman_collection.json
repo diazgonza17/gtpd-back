@@ -7,13 +7,13 @@
 	},
 	"item": [
 		{
-			"name": "localhost:8080/new/persona",
+			"name": "/auth/nuevo",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Cristiano\",\r\n    \"apellido\":\"Ronaldo\"\r\n}",
+					"raw": "{\r\n    \"nombre\":\"gonza\",\r\n    \"nombreUsuario\":\"gonza\",\r\n    \"email\":\"diazgonzalo1720@gmail.com\",\r\n    \"password\":\"zeballos6443\",\r\n    \"roles\":[\"admin\", \"user\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,52 +21,648 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/new/persona",
+					"raw": "localhost:8080/auth/nuevo",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"new",
-						"persona"
+						"auth",
+						"nuevo"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "localhost:8080/ver/personas",
+			"name": "/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreUsuario\":\"user\",\r\n    \"password\":\"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/perso/detail",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/ver/personas",
+					"raw": "localhost:8080/perso/detail",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"ver",
-						"personas"
+						"perso",
+						"detail"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "localhost:8080/delete/{id}",
+			"name": "/perso/update",
 			"request": {
-				"method": "DELETE",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Gonzalo\",\r\n    \"apellido\":\"Diaz\",\r\n    \"titulo\":\"Desarrollador Front-End\",\r\n    \"ubicacion\":\"Buenos Aires, Argentina\",\r\n    \"about\":\"Esto es acerca de mi, quisiera llegar a pasar 255 caracteres asi se si esta andando bien, sino tenemos problemas que no tengo ganas de solucionar, habré llegado a los 255 caracteres? me voy a fijar ya vuelvo. 208 tenia lpm podes creerlo? estuve tan cerca de pegarle a la primera que me equivoque por tan poco i cant believe this fucking shit dea se ponia a hablar english dea pq decia eso re que soy bilingue bue se hacia decir bilingue el man jajajaj entendes dije man, bueno ya debo haber llegado con tranquilidad ahi me fijo.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/delete/5",
+					"raw": "localhost:8080/perso/update",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"perso",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/edu/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/edu/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"edu",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/exp/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/exp/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exp",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/pro/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pro/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pro",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/red/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/red/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"red",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ski/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ski/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ski",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/edu/detail/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/edu/detail/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"edu",
+						"detail",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/exp/detail/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/exp/detail/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exp",
+						"detail",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/pro/detail/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pro/detail/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pro",
+						"detail",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/red/detail/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/red/detail/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"red",
+						"detail",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ski/detail/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ski/detail/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ski",
+						"detail",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/edu/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreEdu\":\"eduPrueba\",\r\n    \"descripcionEdu\":\"prueba de una educacion\",\r\n    \"inicioEdu\": 2021,\r\n    \"finEdu\": 2069\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/edu/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"edu",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/exp/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreExp\":\"expPrueba\",\r\n    \"descripcionExp\":\"prueba de una exp\",\r\n    \"inicioExp\":2077,\r\n    \"finExp\":2420\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/exp/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exp",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/pro/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombrePro\":\"Stopnt\",\r\n    \"descripcionPro\":\"El mejor juego de la historia\",\r\n    \"link\":\"stopnt.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pro/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pro",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/red/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"link\":\"quien usa facebook?!?!\",\r\n    \"clase\":\"facebool\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/red/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"red",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ski/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreSki\":\"aleman\",\r\n    \"score\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ski/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ski",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/edu/update/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreEdu\":\"eduPrueba\",\r\n    \"descripcionEdu\":\"prueba de una educacion\",\r\n    \"inicioEdu\": 2021,\r\n    \"finEdu\": 2069\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/edu/update/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"edu",
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/exp/update/{id}",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/pro/update/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombrePro\": \"Stopnt\",\r\n    \"descripcionPro\": \"El mejor juego de todos los tiempos\",\r\n    \"link\": \"stopnt.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pro/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pro",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/red/update/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"link\": \"github.com/diazgonza17\",\r\n    \"clase\": \"guthib\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/red/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"red",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ski/update/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreSki\": \"english\",\r\n    \"score\": 99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/ski/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ski",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/edu/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/edu/delete/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"edu",
 						"delete",
-						"5"
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/exp/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/exp/delete/15",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exp",
+						"delete",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/pro/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pro/delete/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pro",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/red/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/red/delete/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"red",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ski/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ski/delete/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ski",
+						"delete",
+						"2"
 					]
 				}
 			},
