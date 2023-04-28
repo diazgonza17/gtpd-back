@@ -28,15 +28,17 @@ public class Persona {
     private String ubicacion;
     @Column(length = 1000)
     private String about;
+    private String email;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String titulo, String ubicacion, String about) {
+    public Persona(String nombre, String apellido, String titulo, String ubicacion, String about, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.ubicacion = ubicacion;
         this.about = about;
+        this.email = email;
     }
 }

@@ -18,15 +18,18 @@ public class dtoPersona {
     private String ubicacion;
     @NotBlank
     private String about;
+    @NotBlank
+    private String email;
 
     public dtoPersona() {
     }
 
-    public dtoPersona(String nombre, String apellido, String titulo, String ubicacion, String about) {
+    public dtoPersona(String nombre, String apellido, String titulo, String ubicacion, String about, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.ubicacion = ubicacion;
         this.about = about;
+        this.email = email;
     }
 }

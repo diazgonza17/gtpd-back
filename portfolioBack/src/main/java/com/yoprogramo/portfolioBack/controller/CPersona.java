@@ -49,6 +49,7 @@ public class CPersona {
         persona.setTitulo(dtoPerso.getTitulo());
         persona.setUbicacion(dtoPerso.getUbicacion());
         persona.setAbout(dtoPerso.getAbout());
+        persona.setEmail(dtoPerso.getEmail());
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
     }
