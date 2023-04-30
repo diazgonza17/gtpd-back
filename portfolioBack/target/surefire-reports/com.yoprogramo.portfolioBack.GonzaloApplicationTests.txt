@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.yoprogramo.portfolioBack.GonzaloApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.76 s - in com.yoprogramo.portfolioBack.GonzaloApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.517 s - in com.yoprogramo.portfolioBack.GonzaloApplicationTests
